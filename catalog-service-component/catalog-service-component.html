@@ -1,0 +1,37 @@
+<div *ngFor="let c of products" class="category-wrapper">
+  <table class="category-table">
+    <thead>
+      <tr>
+        <th class="col-half">Ma Danh Muc</th>
+        <th class="col-half">Ten Danh Muc</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ c.Cateid }}</td>
+        <td>{{ c.CateName }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>Ma San Pham</th>
+        <th>Ten San Pham</th>
+        <th>Gia San Pham</th>
+        <th>Picture</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of c.Products" (click)="viewDetail(p)" class="product-row">
+        <td>{{ p.ProductId }}</td>
+        <td>{{ p.ProductName }}</td>
+        <td>{{ p.Price }}</td>
+        <td>
+          <img [src]="p.Image" [alt]="p.ProductName" class="product-img">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
