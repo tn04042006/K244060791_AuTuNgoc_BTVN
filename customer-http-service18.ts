@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'; // 1. Đổi import
+import { Injectable } from '@angular/core'; 
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, retry, catchError, throwError } from 'rxjs';
 
